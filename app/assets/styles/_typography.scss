@@ -1,0 +1,271 @@
+$font-family: "Onest", sans-serif;
+
+/** title/h1 **/
+$text-font-title-h1: $font-family;
+$text-weight-title-h1: 600;
+$font-size-title-h1: 26px;
+$text-lineHeight-title-h1: 36px;
+$text-letterSpacing-title-h1: 0px;
+
+/** title/h2 **/
+$text-font-title-h2: $font-family;
+$text-weight-title-h2: 600;
+$font-size-title-h2: 24px;
+$text-lineHeight-title-h2: 28px;
+$text-letterSpacing-title-h2: 0px;
+
+/** title/h3 **/
+$text-font-title-h3: $font-family;
+$text-weight-title-h3: 600;
+$font-size-title-h3: 22px;
+$text-lineHeight-title-h3: 26px;
+$text-letterSpacing-title-h3: 0px;
+
+/** title/h4 **/
+$text-font-title-h4: $font-family;
+$text-weight-title-h4: 600;
+$font-size-title-h4: 20px;
+$text-lineHeight-title-h4: 24px;
+$text-letterSpacing-title-h4: 0px;
+
+/** title/h5 **/
+$text-font-title-h5: $font-family;
+$text-weight-title-h5: 600;
+$font-size-title-h5: 18px;
+$text-lineHeight-title-h5: 22px;
+$text-letterSpacing-title-h5: 0px;
+
+/** title/h6 **/
+$text-font-title-h6: $font-family;
+$text-weight-title-h6: 600;
+$font-size-title-h6: 16px;
+$text-lineHeight-title-h6: 20px;
+$text-letterSpacing-title-h6: 0px;
+
+/** headline/h1 **/
+$text-font-headline-h1: $font-family;
+$text-weight-headline-h1: 500;
+$font-size-headline-h1: 24px;
+$text-lineHeight-headline-h1: 28px;
+$text-letterSpacing-headline-h1: 0px;
+
+/** body/h1 **/
+$text-font-body-h1: $font-family;
+$text-weight-body-h1: 400;
+$font-size-body-h1: 20px;
+$text-lineHeight-body-h1: 24px;
+$text-letterSpacing-body-h1: 0px;
+
+/** body/h2 **/
+$text-font-body-h2: $font-family;
+$text-weight-body-h2: 400;
+$font-size-body-h2: 18px;
+$text-lineHeight-body-h2: 22px;
+$text-letterSpacing-body-h2: 0px;
+
+/** body/h3 **/
+$text-font-body-h3: $font-family;
+$text-weight-body-h3: 400;
+$font-size-body-h3: 16px;
+$text-lineHeight-body-h3: 20px;
+$text-letterSpacing-body-h3: 0px;
+
+/** body/h4 **/
+$text-font-body-h4: $font-family;
+$text-weight-body-h4: 400;
+$font-size-body-h4: 14px;
+$text-lineHeight-body-h4: 18px;
+$text-letterSpacing-body-h4: 0px;
+
+/** body/h5 **/
+$text-font-body-h5: $font-family;
+$text-weight-body-h5: 400;
+$font-size-body-h5: 12px;
+$text-lineHeight-body-h5: 16px;
+$text-letterSpacing-body-h5: 0px;
+
+/** body/h6 **/
+$text-font-body-h6: $font-family;
+$text-weight-body-h6: 400;
+$font-size-body-h6: 10px;
+$text-lineHeight-body-h6: 14px;
+$text-letterSpacing-body-h6: 0px;
+
+/** headline/h2 **/
+$text-font-headline-h2: $font-family;
+$text-weight-headline-h2: 500;
+$font-size-headline-h2: 22px;
+$text-lineHeight-headline-h2: 26px;
+$text-letterSpacing-headline-h2: 0px;
+
+/** headline/h3 **/
+$text-font-headline-h3: $font-family;
+$text-weight-headline-h3: 500;
+$font-size-headline-h3: 20px;
+$text-lineHeight-headline-h3: 24px;
+$text-letterSpacing-headline-h3: 0px;
+
+/** headline/h4 **/
+$text-font-headline-h4: $font-family;
+$text-weight-headline-h4: 500;
+$font-size-headline-h4: 18px;
+$text-lineHeight-headline-h4: 22px;
+$text-letterSpacing-headline-h4: 0px;
+
+/** headline/h5 **/
+$text-font-headline-h5: $font-family;
+$text-weight-headline-h5: 500;
+$font-size-headline-h5: 16px;
+$text-lineHeight-headline-h5: 20px;
+$text-letterSpacing-headline-h5: 0px;
+
+/** headline/h6 **/
+$text-font-headline-h6: $font-family;
+$text-weight-headline-h6: 500;
+$font-size-headline-h6: 14px;
+$text-lineHeight-headline-h6: 18px;
+$text-letterSpacing-headline-h6: 0px;
+
+@mixin title-h1 {
+  font-family: $text-font-title-h1;
+  font-weight: $text-weight-title-h1;
+  font-size: $font-size-title-h1;
+  line-height: $text-lineHeight-title-h1;
+  letter-spacing: $text-letterSpacing-title-h1;
+}
+
+@mixin title-h2 {
+  font-family: $text-font-title-h2;
+  font-weight: $text-weight-title-h2;
+  font-size: $font-size-title-h2;
+  line-height: $text-lineHeight-title-h2;
+  letter-spacing: $text-letterSpacing-title-h2;
+}
+
+@mixin title-h3 {
+  font-family: $text-font-title-h3;
+  font-weight: $text-weight-title-h3;
+  font-size: $font-size-title-h3;
+  line-height: $text-lineHeight-title-h3;
+  letter-spacing: $text-letterSpacing-title-h3;
+}
+
+@mixin title-h4 {
+  font-family: $text-font-title-h4;
+  font-weight: $text-weight-title-h4;
+  font-size: $font-size-title-h4;
+  line-height: $text-lineHeight-title-h4;
+  letter-spacing: $text-letterSpacing-title-h4;
+}
+
+@mixin title-h5 {
+  font-family: $text-font-title-h5;
+  font-weight: $text-weight-title-h5;
+  font-size: $font-size-title-h5;
+  line-height: $text-lineHeight-title-h5;
+  letter-spacing: $text-letterSpacing-title-h5;
+}
+
+@mixin title-h6 {
+  font-family: $text-font-title-h6;
+  font-weight: $text-weight-title-h6;
+  font-size: $font-size-title-h6;
+  line-height: $text-lineHeight-title-h6;
+  letter-spacing: $text-letterSpacing-title-h6;
+}
+
+@mixin headline-h1 {
+  font-family: $text-font-headline-h1;
+  font-weight: $text-weight-headline-h1;
+  font-size: $font-size-headline-h1;
+  line-height: $text-lineHeight-headline-h1;
+  letter-spacing: $text-letterSpacing-headline-h1;
+}
+
+@mixin body-h1 {
+  font-family: $text-font-body-h1;
+  font-weight: $text-weight-body-h1;
+  font-size: $font-size-body-h1;
+  line-height: $text-lineHeight-body-h1;
+  letter-spacing: $text-letterSpacing-body-h1;
+}
+
+@mixin body-h2 {
+  font-family: $text-font-body-h2;
+  font-weight: $text-weight-body-h2;
+  font-size: $font-size-body-h2;
+  line-height: $text-lineHeight-body-h2;
+  letter-spacing: $text-letterSpacing-body-h2;
+}
+
+@mixin body-h3 {
+  font-family: $text-font-body-h3;
+  font-weight: $text-weight-body-h3;
+  font-size: $font-size-body-h3;
+  line-height: $text-lineHeight-body-h3;
+  letter-spacing: $text-letterSpacing-body-h3;
+}
+
+@mixin body-h4 {
+  font-family: $text-font-body-h4;
+  font-weight: $text-weight-body-h4;
+  font-size: $font-size-body-h4;
+  line-height: $text-lineHeight-body-h4;
+  letter-spacing: $text-letterSpacing-body-h4;
+}
+
+@mixin body-h5 {
+  font-family: $text-font-body-h5;
+  font-weight: $text-weight-body-h5;
+  font-size: $font-size-body-h5;
+  line-height: $text-lineHeight-body-h5;
+  letter-spacing: $text-letterSpacing-body-h5;
+}
+
+@mixin body-h6 {
+  font-family: $text-font-body-h6;
+  font-weight: $text-weight-body-h6;
+  font-size: $font-size-body-h6;
+  line-height: $text-lineHeight-body-h6;
+  letter-spacing: $text-letterSpacing-body-h6;
+}
+
+@mixin headline-h2 {
+  font-family: $text-font-headline-h2;
+  font-weight: $text-weight-headline-h2;
+  font-size: $font-size-headline-h2;
+  line-height: $text-lineHeight-headline-h2;
+  letter-spacing: $text-letterSpacing-headline-h2;
+}
+
+@mixin headline-h3 {
+  font-family: $text-font-headline-h3;
+  font-weight: $text-weight-headline-h3;
+  font-size: $font-size-headline-h3;
+  line-height: $text-lineHeight-headline-h3;
+  letter-spacing: $text-letterSpacing-headline-h3;
+}
+
+@mixin headline-h4 {
+  font-family: $text-font-headline-h4;
+  font-weight: $text-weight-headline-h4;
+  font-size: $font-size-headline-h4;
+  line-height: $text-lineHeight-headline-h4;
+  letter-spacing: $text-letterSpacing-headline-h4;
+}
+
+@mixin headline-h5 {
+  font-family: $text-font-headline-h5;
+  font-weight: $text-weight-headline-h5;
+  font-size: $font-size-headline-h5;
+  line-height: $text-lineHeight-headline-h5;
+  letter-spacing: $text-letterSpacing-headline-h5;
+}
+
+@mixin headline-h6 {
+  font-family: $text-font-headline-h6;
+  font-weight: $text-weight-headline-h6;
+  font-size: $font-size-headline-h6;
+  line-height: $text-lineHeight-headline-h6;
+  letter-spacing: $text-letterSpacing-headline-h6;
+}

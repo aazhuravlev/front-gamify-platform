@@ -1,0 +1,46 @@
+html {
+  font-family: $font-family;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizelegibility;
+}
+
+body {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-family;
+  margin: 0;
+}
+
+button,
+textarea {
+  font-family: $font-family;
+}
+
+button {
+  appearance: none;
+  padding: 0;
+  background: none;
+  border: none;
+}
+
+p {
+  margin: 0;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+.hidden-scroll {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

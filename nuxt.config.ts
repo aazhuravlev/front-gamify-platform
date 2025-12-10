@@ -11,26 +11,26 @@ export default defineNuxtConfig({
       sizeLimitKb: 512,
     },
   },
-  // css: ['~/assets/styles/fonts.scss', '~/assets/styles/global.scss'],
+  css: ['~/assets/styles/fonts.scss', '~/assets/styles/global.scss'],
   alias: {
     // assets: fileURLToPath(new URL('./app/assets', import.meta.url)),
-    // 'business-modules': fileURLToPath(new URL('./app/business-modules', import.meta.url)),
+    'business-modules': fileURLToPath(new URL('./app/business-modules', import.meta.url)),
   },
   vite: {
-    // css: {
-    //   preprocessorOptions: {
-    //     scss: {
-    //       additionalData: '@use "~/assets/styles/injectable.scss" as *;',
-    //     },
-    //   },
-    // },
+    css: {
+      preprocessorOptions: {
+        scss: {
+          additionalData: '@use "~/assets/styles/injectable.scss" as *;',
+        },
+      },
+    },
   },
   typescript: {
     typeCheck: true,
   },
   imports: {
     autoImport: true,
-    // dirs: ['app/stores/**'],
+    dirs: ['app/stores/**'],
   },
   runtimeConfig: {
     public: {
