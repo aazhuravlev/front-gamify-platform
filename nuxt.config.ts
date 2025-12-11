@@ -6,14 +6,16 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@pinia/nuxt', '@nuxt/eslint', '@nuxt/image', '@nuxtjs/stylelint-module', '@nuxt/icon', '@vueuse/nuxt'],
   icon: {
-    clientBundle: {
-      scan: true,
-      sizeLimitKb: 512,
-    },
+    customCollections: [
+      {
+        prefix: 'icon',
+        dir: fileURLToPath(new URL('./app/assets/icons', import.meta.url)),
+      },
+    ],
   },
   css: ['~/assets/styles/fonts.scss', '~/assets/styles/global.scss'],
   alias: {
-    // assets: fileURLToPath(new URL('./app/assets', import.meta.url)),
+    assets: fileURLToPath(new URL('./app/assets', import.meta.url)),
     'business-modules': fileURLToPath(new URL('./app/business-modules', import.meta.url)),
   },
   vite: {
@@ -35,7 +37,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       apiHostInternal: '',
-      apiHostExternal: '',
+      apiHostExternal: 'https://api.gamify-platform.ru',
     },
   },
   // image: {
