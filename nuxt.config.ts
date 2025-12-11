@@ -36,8 +36,7 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      apiHostInternal: '',
-      apiHostExternal: 'https://api.gamify-platform.ru',
+      apiHostInternal: 'http://localhost:3003',
     },
   },
   // image: {

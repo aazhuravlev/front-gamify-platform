@@ -2,7 +2,7 @@ import type { ApiQuizResponse } from '#shared/api/quiz/types';
 
 import { HttpStatus } from 'business-modules/systemic/enums';
 
-import { $apiBaseExternal } from '../../utils/api';
+import { $apiBaseInternal } from '../../utils/api';
 
 export default defineEventHandler(async (event) => {
   const uuid = getRouterParam(event, 'uuid');
@@ -15,7 +15,7 @@ export default defineEventHandler(async (event) => {
   }
 
   try {
-    return await $apiBaseExternal<ApiQuizResponse>(`/v1/quiz/${uuid}`);
+    return await $apiBaseInternal<ApiQuizResponse>(`/v1/quiz/${uuid}`);
   } catch {
     throw createError({
       statusCode: HttpStatus.INTERNAL_SERVER_ERROR,

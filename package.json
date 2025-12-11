@@ -5,6 +5,7 @@
   "private": true,
   "scripts": {
     "build": "nuxt build",
+    "build:widget": "vite build --config widget/widget.build.ts",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
@@ -45,9 +46,12 @@
     "vue-router": "^4.6.3"
   },
   "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.2",
     "eslint-plugin-simple-import-sort": "^12.1.1",
     "sass": "^1.93.2",
     "typescript": "^5.9.3",
+    "vite": "^7.2.7",
+    "vite-plugin-lib-inject-css": "^2.2.2",
     "vue-tsc": "^3.1.1"
   }
 }

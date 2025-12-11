@@ -40,5 +40,9 @@ function backBtnClick(): void {
     height: 24px;
     cursor: pointer;
   }
+
+  &__back-icon {
+    color: $fg-primary;
+  }
 }
 </style>
