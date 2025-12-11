@@ -14,7 +14,7 @@ import type {
 
 export const quizApi = {
   getQuizList(): Promise<ApiQuizListResponse> {
-    return $fetch('/api/quiz');
+    return $fetch('/api/quiz/list');
   },
   getQuizByUuid(uuid: string): Promise<ApiQuizResponse> {
     return $fetch(`/api/quiz/${uuid}`);
@@ -26,6 +26,7 @@ export const quizApi = {
   //   return $fetch('/api/quiz', { method: 'PATCH', body: payload });
   // },
   deleteQuiz(id: ApiQuizResponse['entityId']): Promise<ApiEmptyResponse> {
+    // @ts-ignore
     return $fetch(`/api/quiz/${id}`, { method: 'DELETE' });
   },
   getTaskList(): Promise<ApiTaskListResponse> {

@@ -141,7 +141,7 @@ export const useQuizStore = defineStore('quiz', {
 
     getters: {
       currentQuiz: (state: State): ApiQuizResponse | undefined => state.quiz,
-      quizList: (state: State): ApiQuizListResponse | undefined => state.quizList,
+      quizzes: (state: State): ApiQuizListResponse | undefined => state.quizList,
       taskList: (state: State): ApiTaskListResponse | undefined => state.taskList,
     },
   },

@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="page">
-    <core-header />
+    <core-header v-if="$route.name !== 'arm'" />
     <main class="main">
       <slot name="default" />
     </main>
