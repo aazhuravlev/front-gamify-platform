@@ -16,14 +16,14 @@
 </template>
 
 <script lang="ts" setup>
-import type { ApiQuizListResponse, ApiQuizResponse } from '#shared/api/quiz/types';
+import type { ApiQuizListItemResponse, ApiQuizListResponse } from '#shared/api/quiz/types';
 
 import { HttpStatus } from 'business-modules/systemic/enums';
 
 const quizStore = useQuizStore();
 
 const isOpenForm = ref<boolean>(false);
-const selectedQuiz = ref<ApiQuizResponse | undefined>(undefined);
+const selectedQuiz = ref<ApiQuizListItemResponse | undefined>(undefined);
 
 const { error } = await useAsyncData(() =>
   quizStore.fetchQuizList().catch(() => {
@@ -47,7 +47,7 @@ const openCreateQuizForm = () => {
   isOpenForm.value = true;
 };
 
-const handleChangeQuiz = (quiz: ApiQuizResponse) => {
+const handleChangeQuiz = (quiz: ApiQuizListItemResponse) => {
   selectedQuiz.value = quiz;
   isOpenForm.value = true;
 };

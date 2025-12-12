@@ -22,9 +22,9 @@
 </template>
 
 <script lang="ts" setup>
-import type { ApiCreateQuizPayload, ApiQuizResponse } from '#shared/api/quiz/types';
+import type { ApiCreateQuizPayload, ApiQuizListItemResponse } from '#shared/api/quiz/types';
 
-const props = defineProps<{ quiz: ApiQuizResponse | undefined }>();
+const props = defineProps<{ quiz: ApiQuizListItemResponse | undefined }>();
 
 onMounted(() => {
   if (props.quiz) {

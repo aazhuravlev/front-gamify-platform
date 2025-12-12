@@ -7,18 +7,21 @@ import '../app/assets/styles/global.scss';
 
 function parsePropsFromElement(el: Element) {
   let uuid: string = '';
+  let phone: string = '';
 
   if (!el) {
-    return { uuid };
+    return { uuid, phone };
   }
 
-  const data = el.getAttribute('data-uuid');
+  const dataUuid = el.getAttribute('data-uuid');
+  const dataPhone = el.getAttribute('data-phone');
 
-  if (data) {
-    uuid = data;
+  if (dataUuid && dataPhone) {
+    uuid = dataUuid;
+    phone = dataPhone;
   }
 
-  return { uuid };
+  return { uuid, phone };
 }
 
 function mountWidget() {

@@ -6,7 +6,11 @@
 
     <p v-if="quiz.description" class="quiz-hero__description">{{ quiz.description }}</p>
 
-    <quiz-progress :completed-tasks-qty="0" :tasks-qty="quiz.tasks.length" class="quiz-hero__progress" />
+    <quiz-progress
+      :completed-tasks-qty="quiz.progress.completedTasks"
+      :tasks-qty="quiz.progress.totalTasks"
+      class="quiz-hero__progress"
+    />
   </ui-container>
 </template>
 

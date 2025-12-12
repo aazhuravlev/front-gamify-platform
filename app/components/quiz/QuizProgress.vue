@@ -7,10 +7,15 @@
 </template>
 
 <script lang="ts" setup>
-const props = defineProps<{
-  completedTasksQty: number;
-  tasksQty: number;
-}>();
+const props = withDefaults(
+  defineProps<{
+    completedTasksQty?: number;
+    tasksQty: number;
+  }>(),
+  {
+    completedTasksQty: 0,
+  },
+);
 
 const progress = computed<number>(() => (props.completedTasksQty / props.tasksQty) * 100);
 </script>

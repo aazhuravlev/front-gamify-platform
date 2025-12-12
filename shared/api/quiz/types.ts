@@ -27,6 +27,10 @@ export interface ApiQuizResponse {
   tasks: ApiTaskResponse[];
   title: string;
   uuid: string;
+  progress: {
+    completedTasks?: number;
+    totalTasks: number;
+  };
 }
 
 export interface ApiCreateQuizPayload {
@@ -66,6 +70,8 @@ export interface ApiTaskResponse {
   entityId: number;
   extId: string;
   title: string;
+  isCompleted?: boolean;
+  url: string;
 }
 
 export interface ApiTaskDetailResponse {

@@ -92,8 +92,8 @@ export const useQuizStore = defineStore('quiz', {
       this.SET_QUIZ_LIST(res);
       return res;
     },
-    async fetchQuizByUuid(uuid: string): Promise<ApiQuizResponse> {
-      const res = await quizApi.getQuizByUuid(uuid);
+    async fetchQuizByUuid(uuid: string, phone: string): Promise<ApiQuizResponse> {
+      const res = await quizApi.getQuizByUuid(uuid, phone);
       this.SET_CURRENT_QUIZ_DATA(res);
       return res;
     },

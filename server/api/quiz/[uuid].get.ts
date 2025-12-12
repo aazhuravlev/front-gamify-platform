@@ -5,7 +5,9 @@ import { HttpStatus } from 'business-modules/systemic/enums';
 import { $apiBaseInternal } from '../../utils/api';
 
 export default defineEventHandler(async (event) => {
-  const uuid = getRouterParam(event, 'uuid');
+  const uuid = getRouterParam(event, 'id');
+  const query = getQuery(event);
+  const phone = query.phone as string;
 
   if (!uuid) {
     throw createError({
@@ -14,12 +16,5 @@ export default defineEventHandler(async (event) => {
     });
   }
 
-  try {
-    return await $apiBaseInternal<ApiQuizResponse>(`/v1/quiz/${uuid}`);
-  } catch {
-    throw createError({
-      statusCode: HttpStatus.INTERNAL_SERVER_ERROR,
-      message: 'Failed to fetch quiz',
-    });
-  }
+  return await $apiBaseInternal<ApiQuizResponse>(`/v1/quiz/${uuid}?phone=${phone}`);
 });

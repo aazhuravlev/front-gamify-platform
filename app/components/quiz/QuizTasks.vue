@@ -6,7 +6,7 @@
 
     <ul class="quiz-tasks__list">
       <li v-for="task in tasks" :key="task.entityId" class="quiz-tasks__item">
-        <quiz-task-item :task />
+        <quiz-task-item :completed="task.isCompleted" :task />
       </li>
     </ul>
   </ui-container>

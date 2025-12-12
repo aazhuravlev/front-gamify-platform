@@ -15,8 +15,8 @@ export const quizApi = {
   getQuizList(): Promise<ApiQuizListResponse> {
     return $fetch('/api/quiz/list');
   },
-  getQuizByUuid(uuid: string): Promise<ApiQuizResponse> {
-    return $fetch(`/api/quiz/${uuid}`);
+  getQuizByUuid(uuid: string, phone: string): Promise<ApiQuizResponse> {
+    return $fetch(`/api/quiz/${uuid}?phone=${phone}`);
   },
   createQuiz(payload: ApiCreateQuizPayload): Promise<ApiQuizResponse> {
     return $fetch('/api/quiz', { method: 'POST', body: payload });
