@@ -37,7 +37,8 @@ onMounted(() => {
     console.log('window.parent.location', window.parent.location);
     console.log('window?.parent?.[0]', window?.parent?.[0]);
 
-    const origin = window?.parent?.[0]?.location.ancestorOrigins[0];
+    const origin =
+      window?.parent?.[0]?.location?.ancestorOrigins[0] || window?.parent?.[1]?.location?.ancestorOrigins[0];
 
     if (origin && props.task.url) {
       href.value = origin + props.task.url;
