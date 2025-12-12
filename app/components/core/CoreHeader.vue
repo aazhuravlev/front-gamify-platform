@@ -10,6 +10,7 @@
 
 <script lang="ts" setup>
 function backBtnClick(): void {
+  console.log('=>>>>>>>>>> backBtnClick');
   window.history.back();
 }
 </script>
