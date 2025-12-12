@@ -1,13 +1,22 @@
 <template>
-  <div class="container">
+  <div class="arm">
     <h1 class="arm__title">АРМ сотрудника</h1>
-    <template v-if="quizList">
+    <ui-button
+      v-if="!isOpenForm"
+      class="arm__quiz-create-btn"
+      @click="openCreateQuizForm"
+    >
+      Создать викторину
+    </ui-button>
+    <template v-if="showQuizList">
       <quiz-card
-        class="row" v-for="(quiz) in quizList.items"
+        v-for="(quiz) in quizList.items"
         :key="quiz.entityId"
         :quiz
       />
     </template>
+
+    <quiz-form v-else />
   </div>
 </template>
 
@@ -17,6 +26,8 @@ import type { ApiQuizListResponse } from '#shared/api/quiz/types';
 import { HttpStatus } from 'business-modules/systemic/enums';
 
 const quizStore = useQuizStore();
+
+const isOpenForm = ref<boolean>(false);
 
 const { error } = await useAsyncData(() =>
     quizStore.fetchQuizList()
@@ -33,10 +44,17 @@ if (error.value) {
 }
 
 const quizList = computed<ApiQuizListResponse>(() => quizStore.quizList!);
+const showQuizList = computed<boolean>(() => {
+  return quizList.value && !isOpenForm.value;
+});
+
+const openCreateQuizForm = () => {
+  isOpenForm.value = true;
+};
 </script>
 
 <style scoped lang="scss">
-.container {
+.arm {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -46,13 +64,18 @@ const quizList = computed<ApiQuizListResponse>(() => quizStore.quizList!);
   margin-right: auto;
   padding-left: 16px;
   padding-right: 16px;
-  width: 1200px;
+  width: 832px;
   margin-top: 20px;
 
-  .arm {
-    &__title {
-      margin-bottom: 20px;
-    }
+  &__title {
+    margin-bottom: 20px;
+  }
+
+  &__quiz-create-btn {
+    max-width: 200px;
+    margin-left: auto;
+    margin-bottom: 12px;
+    cursor: pointer;
   }
 }
 </style>

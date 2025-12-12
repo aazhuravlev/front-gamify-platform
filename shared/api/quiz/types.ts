@@ -1,6 +1,19 @@
 export interface ApiQuizListResponse {
-  items: ApiQuizResponse[];
+  items: ApiQuizListItemResponse[];
   total: number;
+}
+
+export interface ApiQuizListItemResponse {
+  bgColor: string;
+  bannerBgColor: string;
+  description: string;
+  entityId: number;
+  image: string; // base64
+  widgetImage: string; // base64
+  shortDescription: string;
+  tasks: ApiTaskResponse[];
+  title: string;
+  uuid: string;
 }
 
 export interface ApiQuizResponse {
@@ -18,6 +31,7 @@ export interface ApiQuizResponse {
 
 export interface ApiCreateQuizPayload {
   bgColor: string; // HEX
+  bannerBgColor: string; // HEX
   description: string;
   image: string; // base64
   imageSmall: string; // base64
