@@ -30,7 +30,7 @@ const props = defineProps<{
 const href = ref<string>('');
 
 onMounted(() => {
-  const origin = window?.parent?.location?.origin || window?.location?.origin;
+  const origin = window?.parent?.[0]?.location.ancestorOrigins[0];
 
   if (origin && props.task.url) {
     href.value = origin + props.task.url;
