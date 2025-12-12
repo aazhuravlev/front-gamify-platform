@@ -27,11 +27,15 @@ function parsePropsFromElement(el: Element) {
 function mountWidget() {
   const el = document.querySelector('#tasks-widget');
 
+  console.log('=>>>>>>>> mountWidget', el);
+
   if (!el) {
     return;
   }
 
   const props = parsePropsFromElement(el);
+
+  console.log('=>>>>>>>> mountWidget props', props);
 
   const app = createApp(WidgetComponent, props);
 
