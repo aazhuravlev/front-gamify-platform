@@ -22,6 +22,7 @@ export const quizApi = {
     return $fetch('/api/quiz', { method: 'POST', body: payload });
   },
   updateQuiz(id: ApiQuizResponse['entityId'], payload: ApiUpdateQuizPayload): Promise<ApiQuizResponse> {
+    // @ts-ignore
     return $fetch(`/api/quiz/${id}`, { method: 'PATCH', body: payload });
   },
   deleteQuiz(id: ApiQuizResponse['entityId']): Promise<ApiEmptyResponse> {
