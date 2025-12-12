@@ -53,7 +53,7 @@ function mountWidget() {
           mountElement(el);
         }
       }
-    }, 1000);
+    }, 100);
   }
 
   if (el) {

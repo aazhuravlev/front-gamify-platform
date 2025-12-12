@@ -23,7 +23,6 @@ function backBtnClick(): void {
   width: 100%;
   max-width: 100vw;
   z-index: 10;
-  padding-top: $header-padding-top;
 
   &__container {
     display: flex;

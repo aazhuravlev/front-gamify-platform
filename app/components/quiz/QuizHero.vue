@@ -38,7 +38,7 @@ const backgroundGradient = computed<CSSProperties>(() => {
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: 100px $space-m $space-xl;
+  padding: $space-4xl $space-m $space-xl;
 
   &__title {
     @include title-h2;
