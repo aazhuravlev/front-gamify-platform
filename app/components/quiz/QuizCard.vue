@@ -1,9 +1,10 @@
 <template>
   <div class="quiz-card">
     <div class="quiz-card__actions">
-      <ui-button class="quiz-card__delete" @click="onDelete">Удалить</ui-button>
-      <ui-button class="quiz-card__change" @click="onChange">Изменить</ui-button>
+      <ui-button class="quiz-card__btn quiz-card__btn_delete" @click="onDelete">Удалить</ui-button>
+      <ui-button class="quiz-card__btn quiz-card__btn_change" @click="onChange">Изменить</ui-button>
     </div>
+
     <div class="quiz-card__row">
       <span class="quiz-card__label">Заголовок:</span>
       <span class="quiz-card__value">{{ quiz.title }}</span>
@@ -38,14 +39,31 @@
       <span class="quiz-card__label">Изображение баннера:</span>
       <img :alt="quiz.title" :src="quiz.widgetImage" class="quiz-card__img" />
     </div>
+    
+    <div v-for="(task, index) in tasks" :key="task.quizId" class="quiz-card__task">
+      <span class="quiz-card__task-number">{{ `Задание №${index + 1}` }}</span>
+      <div class="quiz-card__row">
+        <span class="quiz-card__label">Заголовок:</span>
+        <span class="quiz-card__value">{{ task.title }}</span>
+      </div>
+      <div class="quiz-card__row">
+        <span class="quiz-card__label">Описание:</span>
+        <span class="quiz-card__value">{{ task.description }}</span>
+      </div>
+      <div class="quiz-card__row">
+        <span class="quiz-card__label">Url:</span>
+        <span class="quiz-card__value">{{ task.url }}</span>
+      </div>
+    </div>
   </div>
 </template>
 
 <script lang="ts" setup>
-import type { ApiQuizListItemResponse } from '#shared/api/quiz/types';
+import type { ApiQuizListItemResponse, ApiTaskListResponse } from '#shared/api/quiz/types';
 
 const props = defineProps<{
   quiz: ApiQuizListItemResponse;
+  tasks: ApiTaskListResponse['items'];
 }>();
 
 const quizStore = useQuizStore();
@@ -67,6 +85,7 @@ const emit = defineEmits<{
 $img-size: 96px;
 
 .quiz-card {
+  box-sizing: border-box;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -103,7 +122,7 @@ $img-size: 96px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    max-width: 576px;
+    max-width: 544px;
   }
 
   &__img {
@@ -111,8 +130,21 @@ $img-size: 96px;
     max-height: $img-size;
   }
 
-  &__delete {
-    background-color: red;
+  &__btn {
+    cursor: pointer;
+
+    &_delete {
+      background-color: $color--accent-danger;
+    }
+  }
+
+  &__task {
+    display: flex;
+    flex-direction: column;
+
+    &-number {
+      margin-bottom: 8px;
+    }
   }
 }
 </style>

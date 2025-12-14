@@ -123,7 +123,7 @@ const clearFile = () => {
   }
 
   &__preview-image {
-    max-width: calc(100% - 76px - 8px);
+    max-width: 140px;
     border-radius: 8px;
     border: 2px solid #e5e7eb;
   }

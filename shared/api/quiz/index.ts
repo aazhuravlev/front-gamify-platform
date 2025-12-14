@@ -9,6 +9,7 @@ import type {
   ApiTaskListResponse,
   ApiTaskResponse,
   ApiUpdateQuizPayload,
+  ApiUpdateTaskPayload,
 } from './types';
 
 export const quizApi = {
@@ -39,12 +40,14 @@ export const quizApi = {
     return $fetch(`/api/task/by-quiz/${id}`);
   },
   createTask(payload: ApiCreateTaskPayload): Promise<ApiTaskDetailResponse> {
+    // @ts-ignore
     return $fetch('/api/task', { method: 'POST', body: payload });
   },
-  // updateTask(payload: ApiUpdateTaskPayload): Promise<ApiTaskDetailResponse> {
-  //   return $fetch('/api/task', { method: 'PATCH', body: payload });
-  // },
+  updateTask(id: ApiTaskDetailResponse['entityId'], payload: ApiUpdateTaskPayload): Promise<ApiTaskDetailResponse> {
+    return $fetch(`/api/task/${id}`, { method: 'PATCH', body: payload });
+  },
   deleteTask(id: ApiTaskResponse['entityId']): Promise<ApiEmptyResponse> {
+    // @ts-ignore
     return $fetch(`/api/task/${id}`, { method: 'DELETE' });
   },
 };

@@ -63,6 +63,7 @@ export interface ApiTaskListItemResponse {
   extId: string;
   title: string;
   quizId: number;
+  url: string;
 }
 
 export interface ApiTaskResponse {
@@ -80,6 +81,7 @@ export interface ApiTaskDetailResponse {
   extId: string;
   title: string;
   quizId: number;
+  url: string;
 }
 
 export interface ApiCreateTaskPayload {
@@ -87,6 +89,7 @@ export interface ApiCreateTaskPayload {
   extId: string;
   title: string;
   quizId: number;
+  url: string;
 }
 
 export interface ApiUpdateTaskPayload {
@@ -94,4 +97,5 @@ export interface ApiUpdateTaskPayload {
   extId?: string;
   title?: string;
   quizId?: number;
+  url?: string;
 }

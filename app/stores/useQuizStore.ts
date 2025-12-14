@@ -10,7 +10,7 @@ import type {
   ApiTaskListItemResponse,
   ApiTaskListResponse,
   ApiTaskResponse,
-  ApiUpdateQuizPayload,
+  ApiUpdateQuizPayload, ApiUpdateTaskPayload,
 } from '#shared/api/quiz/types';
 
 import type { ApiEmptyResponse } from 'business-modules/systemic/types';
@@ -70,14 +70,14 @@ export const useQuizStore = defineStore('quiz', {
         this.taskList = { total: 1, items: [response] };
       }
     },
-    // UPDATE_TASK(response: ApiTaskListItemResponse): void {
-    //   if (this.taskList) {
-    //     const index = this.taskList.items.findIndex(task => task.entityId === response.entityId);
-    //     if (index >= 0) {
-    //       this.taskList.items.splice(index, 1, response);
-    //     }
-    //   }
-    // },
+    UPDATE_TASK(response: ApiTaskListItemResponse): void {
+      if (this.taskList) {
+        const index = this.taskList.items.findIndex(task => task.entityId === response.entityId);
+        if (index >= 0) {
+          this.taskList.items.splice(index, 1, response);
+        }
+      }
+    },
     DELETE_TASK(id: ApiTaskResponse['entityId']): void {
       if (this.taskList) {
         const index = this.taskList.items.findIndex((task) => task.entityId === id);
@@ -128,11 +128,11 @@ export const useQuizStore = defineStore('quiz', {
       this.ADD_TASK_TO_LIST(res);
       return res;
     },
-    // async updateTask(payload: ApiUpdateTaskPayload): Promise<ApiTaskDetailResponse> {
-    //   const res = await quizApi.updateTask(payload);
-    //   this.UPDATE_TASK(res);
-    //   return res;
-    // },
+    async updateTask(id: ApiTaskDetailResponse['entityId'], payload: ApiUpdateTaskPayload): Promise<ApiTaskDetailResponse> {
+      const res = await quizApi.updateTask(id, payload);
+      this.UPDATE_TASK(res);
+      return res;
+    },
     deleteTask(id: ApiQuizResponse['entityId']): Promise<ApiEmptyResponse> {
       const res = quizApi.deleteTask(id);
       this.DELETE_TASK(id);
