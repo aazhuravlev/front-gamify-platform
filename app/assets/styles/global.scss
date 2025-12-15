@@ -1,5 +1,5 @@
 html {
-  font-family: $font-family;
+  font-family: "Onest", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizelegibility;
@@ -15,7 +15,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: $font-family;
+  font-family: "Onest", sans-serif;
   margin: 0;
 }
 
@@ -29,7 +29,7 @@ h6 {
 
 button,
 textarea {
-  font-family: $font-family;
+  font-family: "Onest", sans-serif;
 }
 
 button {

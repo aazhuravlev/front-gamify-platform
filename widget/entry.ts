@@ -1,9 +1,9 @@
-// import { createApp } from 'vue';
+import { createApp } from 'vue';
 
-// import WidgetComponent from '../widget/components/Widget.vue';
+import WidgetComponent from '../widget/components/Widget.vue';
 
 // import '../app/assets/styles/fonts.scss';
-// import '../app/assets/styles/global.scss';
+import '../app/assets/styles/global.scss';
 
 function parsePropsFromElement(el: Element) {
   let uuid: string = '';
@@ -29,9 +29,9 @@ function mountElement(el: Element) {
 
   console.log('=>>>>>>>> mountWidget props', props);
 
-  // const app = createApp(WidgetComponent, props);
-  //
-  // app.mount(el);
+  const app = createApp(WidgetComponent, props);
+
+  app.mount(el);
 }
 
 function mountWidget() {
