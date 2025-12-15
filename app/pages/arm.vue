@@ -84,6 +84,11 @@ const getTasksByQuizId = (quizId?: ApiQuizListItemResponse['entityId']) => {
     max-width: 200px;
     margin-left: auto;
     cursor: pointer;
+
+    @media #{$media-to-sm} {
+      width: 100%;
+      max-width: unset;
+    }
   }
 }
 </style>
