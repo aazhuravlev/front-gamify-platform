@@ -30,16 +30,18 @@ const props = defineProps<{
 
 const quiz = ref<ApiQuizResponse | undefined>(undefined);
 
-onMounted(async () => {
-  const res = await fetch(`${FRONT_URL}/api/quiz/${props.uuid}?phone=${props.phone}`)
-    .then((r) => r.json())
-    .catch(() => {
-      console.error('Не получилось загрузить данные для виджета');
-    });
+onMounted(() => {
+  setTimeout(async () => {
+    const res = await fetch(`${FRONT_URL}/api/quiz/${props.uuid}?phone=${props.phone}`)
+      .then((r) => r.json())
+      .catch(() => {
+        console.error('Не получилось загрузить данные для виджета');
+      });
 
-  if (res) {
-    quiz.value = res;
-  }
+    if (res) {
+      quiz.value = res;
+    }
+  }, 1000);
 });
 
 const backgroundGradient = computed<CSSProperties>(() => {
